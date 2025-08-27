@@ -54,3 +54,10 @@ $ docker pull dbage/pgadmin4:8.6
 - [Paste JSON as Code](https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype)
 - [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
 - [Backticks](https://marketplace.visualstudio.com/items?itemName=fractalbrew.backticks)
+
+## NestJS
+
+NestJS es un **framework para construir aplicaciones del lado del servidor** con **Node.js**.
+
+Está desarrollado en TypeScript (aunque también se peude usar con JavaScript) y está inspirado en la aquitectura de **Angular**, organizando el código en **módulos, controladores y servicios**.
+Se utiliza mucho para crear **APIs REST, APIs GraphQl y microservicios**.
