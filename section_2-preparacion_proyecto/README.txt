@@ -40,3 +40,7 @@ PREPARACIÓN DE PROYECTO Y BASE DE DATOS
                     > Password: {{POSTGRES_PASSWORD}}
                     > Save password?: true
                 Click 'Save'
+
+* pgAdmin4
+    - Abrir Query Tool (Ejectua script SQL): Servers > {{SERVER_NAME}} > Databases > {{DATABASE_NAME}} y Click en 'Query Tool' o (ALT + SHIFT + Q)
+        + Copiar la 'Query Scripts' y Click en 'Execute script' o F5 para importa la data
