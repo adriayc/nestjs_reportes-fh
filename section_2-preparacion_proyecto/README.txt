@@ -44,3 +44,24 @@ PREPARACIÓN DE PROYECTO Y BASE DE DATOS
 * pgAdmin4
     - Abrir Query Tool (Ejectua script SQL): Servers > {{SERVER_NAME}} > Databases > {{DATABASE_NAME}} y Click en 'Query Tool' o (ALT + SHIFT + Q)
         + Copiar la 'Query Scripts' y Click en 'Execute script' o F5 para importa la data
+
+* Dependencias NestJS
+    - Prisma CLI
+        $ npx prisma
+        ó
+        $ npx prisma init
+            Ok to proceed? (y) y
+    - Prisma Client
+        $ npm install @prisma/client
+
+    - Genera un archivo de esquema Prisma (Refleja el estado actual de la DB)
+        $ npx prisma db pull
+    - Genera el cliente de Prisma
+        $ npx prisma generate
+
+* Nest CLI
+    -  Crear un nuevo recurso (sin archivo de pruebas)
+        $ nest g resource {{RESOURCE-NAME}} --no-spec
+        $ nest g resource basic-reports --no-spec
+            > What transport layer do you use? REST API
+            > Would you like to generate CRUD entry points? (Y/n) n
