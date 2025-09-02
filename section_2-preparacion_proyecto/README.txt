@@ -65,3 +65,5 @@ PREPARACIÓN DE PROYECTO Y BASE DE DATOS
         $ nest g resource basic-reports --no-spec
             > What transport layer do you use? REST API
             > Would you like to generate CRUD entry points? (Y/n) n
+
+CONSTANCIA DE EMPLEADOS
