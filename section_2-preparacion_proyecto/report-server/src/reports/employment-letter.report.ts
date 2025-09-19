@@ -1,9 +1,4 @@
-import type {
-  Content,
-  StyleDictionary,
-  TDocumentDefinitions,
-} from 'pdfmake/interfaces';
-import { DateFormatter } from 'src/helpers';
+import type { StyleDictionary, TDocumentDefinitions } from 'pdfmake/interfaces';
 import { headerSection } from './sections/header.section';
 
 const styles: StyleDictionary = {
