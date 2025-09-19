@@ -70,4 +70,9 @@ PREPARACIÓN DE PROYECTO Y BASE DE DATOS
             > What transport layer do you use? REST API
             > Would you like to generate CRUD entry points? (Y/n) n
 
+    - Crear un nuevo modulo
+        $ nest g module printer
+    - Crear un nuevo service
+        $ nest g service printer --no-spec
+
 CONSTANCIA DE EMPLEADOS
