@@ -80,3 +80,8 @@ CONSTANCIA DE EMPLEADOS
 TABLAS - PAGINACIÓN Y FILTROS
 
 * Levantar la app y la database (Optinal: realizar las respectivas configuraciones)
+
+* Importar la base de datos y reconstruir el modelo de prisma
+    $ npx prisma db pull    // Verifica como esta la db y crea los esquemas
+        Ok to proceed? (y) y
+    $ npx prisma generate   // Generar el nuevo cliente
