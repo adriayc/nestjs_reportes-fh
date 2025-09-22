@@ -78,3 +78,5 @@ PREPARACIÓN DE PROYECTO Y BASE DE DATOS
 CONSTANCIA DE EMPLEADOS
 
 TABLAS - PAGINACIÓN Y FILTROS
+
+* Levantar la app y la database (Optinal: realizar las respectivas configuraciones)
