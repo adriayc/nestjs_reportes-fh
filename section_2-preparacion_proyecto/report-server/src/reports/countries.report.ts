@@ -31,5 +31,5 @@ export const getCountriesReport = (): TDocumentDefinitions => {
         },
       },
     ],
-  } as TDocumentDefinitions;
+  };
 };
