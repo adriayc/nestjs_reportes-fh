@@ -43,6 +43,52 @@ export const getCountriesReport = (
               country.continent ?? '',
               country.local_name ?? '',
             ]),
+            ['', '', '', '', '', ''],
+            [
+              '',
+              '',
+              '',
+              '',
+              'Total',
+              {
+                text: `${countries.length} países`,
+                bold: true,
+              },
+            ],
+          ],
+        },
+      },
+
+      // Tabla de totales
+      {
+        text: 'Totales',
+        style: {
+          fontSize: 18,
+          bold: true,
+          margin: [0, 40, 0, 0],
+        },
+      },
+      {
+        layout: 'noBorders',
+        table: {
+          headerRows: 1,
+          widths: [50, 50, 70, '*', 'auto', '*'],
+          body: [
+            [
+              {
+                text: 'Total de países',
+                colSpan: 2,
+                bold: true,
+              },
+              '',
+              {
+                text: `${countries.length.toString()} países`,
+                bold: true,
+              },
+              '',
+              '',
+              '',
+            ],
           ],
         },
       },
