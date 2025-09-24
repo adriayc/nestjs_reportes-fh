@@ -93,3 +93,9 @@ RECIBO DE COMPRA - MAESTRO DETALLE RELACIONADO
     $ npx prisma db pull    // Verifica como esta la db y crea los esquemas
         Ok to proceed? (y) y
     $ npx prisma generate   // Generar el nuevo cliente
+
+* Nest CLI
+    -  Crear un nuevo recurso (sin archivo de pruebas)
+        $ nest g resource storeReports --no-spec
+            > What transport layer do you use? REST API
+            > Would you like to generate CRUD entry points? (Y/n) n
