@@ -85,3 +85,5 @@ TABLAS - PAGINACIÓN Y FILTROS
     $ npx prisma db pull    // Verifica como esta la db y crea los esquemas
         Ok to proceed? (y) y
     $ npx prisma generate   // Generar el nuevo cliente
+
+RECIBO DE COMPRA - MAESTRO DETALLE RELACIONADO
