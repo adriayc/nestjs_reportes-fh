@@ -25,10 +25,13 @@ export const orderByIdReport = (): TDocumentDefinitions => {
     pageMargins: [40, 60, 40, 60],
     styles: styles,
     content: [
+      // Headers
       {
         text: 'Tucan Code',
         style: 'header',
       },
+
+      // Address y número recibo
       {
         columns: [
           {
@@ -42,6 +45,9 @@ export const orderByIdReport = (): TDocumentDefinitions => {
           },
         ],
       },
+
+      // QR (resized )
+      { qr: 'https://devtalles.com', fit: 75, alignment: 'right' },
     ],
   };
 };
