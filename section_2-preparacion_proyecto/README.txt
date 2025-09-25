@@ -62,6 +62,9 @@ PREPARACIÓN DE PROYECTO Y BASE DE DATOS
     - pdfmake
         $ npm install pdfmake
         $ npm i --save-dev @types/pdfmake // Tipado estricto
+    
+    - Axios
+        $ npm i axios
 
 * Nest CLI
     -  Crear un nuevo recurso (sin archivo de pruebas)

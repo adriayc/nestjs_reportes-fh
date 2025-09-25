@@ -20,8 +20,8 @@ export class StoreReportsController {
   }
 
   @Get('svgs-charts')
-  getSvgChart(@Res() response: Response) {
-    const pdfDoc = this.storeReportsService.getSvgChart();
+  async getSvgChart(@Res() response: Response) {
+    const pdfDoc = await this.storeReportsService.getSvgChart();
 
     response.setHeader('Content-Type', 'application/pdf');
     pdfDoc.info.Title = 'SVG-Chart-Report';
