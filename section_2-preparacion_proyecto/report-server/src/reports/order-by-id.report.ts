@@ -4,6 +4,7 @@ import type {
   TDocumentDefinitions,
 } from 'pdfmake/interfaces';
 import { footerSection } from './sections/footer.section';
+import { CurrencyFormatter } from 'src/helpers';
 
 const logo: Content = {
   image: 'src/assets/tucan-banner.png',
@@ -70,6 +71,82 @@ export const orderByIdReport = (): TDocumentDefinitions => {
             style: 'subHeader',
           },
           `Razón Social: Richter Supermarkt \nMichael Holz \nGrenzacherweg 237`,
+        ],
+      },
+
+      // Tabla del detalle de la orden
+      {
+        layout: 'headerLineOnly',
+        margin: [0, 20],
+        table: {
+          headerRows: 1,
+          widths: [50, '*', 'auto', 'auto', 'auto'],
+          body: [
+            ['ID', 'Descripción', 'Cantidad', 'Precio', 'Total'],
+            [
+              '1',
+              'Product 1',
+              '1',
+              '100',
+              {
+                text: CurrencyFormatter.formatCurrency(100),
+                alignment: 'right',
+              },
+            ],
+            [
+              '2',
+              'Product 2',
+              '2',
+              '200',
+              {
+                text: CurrencyFormatter.formatCurrency(400),
+                alignment: 'right',
+              },
+            ],
+            [
+              '3',
+              'Product 3',
+              '3',
+              '300',
+              {
+                text: CurrencyFormatter.formatCurrency(1650),
+                alignment: 'right',
+              },
+            ],
+          ],
+        },
+      },
+
+      // Salto de línea
+      '\n',
+
+      // Totales
+      {
+        columns: [
+          { width: '*', text: '' },
+          {
+            width: 'auto',
+            layout: 'noBorders',
+            table: {
+              body: [
+                [
+                  'Subtotal',
+                  {
+                    text: CurrencyFormatter.formatCurrency(120),
+                    alignment: 'right',
+                  },
+                ],
+                [
+                  { text: 'Total', bold: true },
+                  {
+                    text: CurrencyFormatter.formatCurrency(150),
+                    alignment: 'right',
+                    bold: true,
+                  },
+                ],
+              ],
+            },
+          },
         ],
       },
     ],
