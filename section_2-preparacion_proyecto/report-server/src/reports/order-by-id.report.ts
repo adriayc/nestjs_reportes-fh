@@ -4,7 +4,7 @@ import type {
   TDocumentDefinitions,
 } from 'pdfmake/interfaces';
 import { footerSection } from './sections/footer.section';
-import { CurrencyFormatter } from 'src/helpers';
+import { CurrencyFormatter, DateFormatter } from 'src/helpers';
 
 const logo: Content = {
   image: 'src/assets/tucan-banner.png',
@@ -68,8 +68,17 @@ interface ReportValues {
 
 export const orderByIdReport = (value: ReportValues): TDocumentDefinitions => {
   const { data } = value;
+  const { customers, order_details } = data;
 
-  console.log(data);
+  const subTotal = order_details.reduce(
+    (acc, detail) => acc + detail.quantity * +detail.products.price,
+    0,
+  );
+
+  const total = subTotal * 1.15;
+
+  //   console.log(data);
+  console.log('ORDER_DETAILS:', order_details);
 
   return {
     header: logo,
@@ -94,10 +103,10 @@ export const orderByIdReport = (value: ReportValues): TDocumentDefinitions => {
           {
             text: [
               {
-                text: 'Recibo No#: 10255\n',
+                text: `Recibo No#: ${data.order_id}\n`,
                 bold: true,
               },
-              `Fecha del recibo: 11 de julio de 2021 \nPagar antes de: 18 de mayo de 2024`,
+              `Fecha del recibo: ${DateFormatter.getDDMMMMYYYY(data.order_date)} \nPagar antes de: ${DateFormatter.getDDMMMMYYYY(new Date())}`,
             ],
             alignment: 'right',
           },
@@ -114,7 +123,8 @@ export const orderByIdReport = (value: ReportValues): TDocumentDefinitions => {
             text: 'Cobrar a:\n',
             style: 'subHeader',
           },
-          `Razón Social: Richter Supermarkt \nMichael Holz \nGrenzacherweg 237`,
+          `Razón Social: ${customers.customer_name}\n`,
+          `Contancto: ${customers.contact_name}`,
         ],
       },
 
@@ -127,36 +137,31 @@ export const orderByIdReport = (value: ReportValues): TDocumentDefinitions => {
           widths: [50, '*', 'auto', 'auto', 'auto'],
           body: [
             ['ID', 'Descripción', 'Cantidad', 'Precio', 'Total'],
-            [
-              '1',
-              'Product 1',
-              '1',
-              '100',
+            // [
+            //   '3',
+            //   'Product 3',
+            //   '3',
+            //   '300',
+            //   {
+            //     text: CurrencyFormatter.formatCurrency(1650),
+            //     alignment: 'right',
+            //   },
+            // ],
+            ...order_details.map((detail) => [
+              detail.order_detail_id.toString(),
+              detail.products.product_name,
+              detail.quantity.toString(),
               {
-                text: CurrencyFormatter.formatCurrency(100),
+                text: CurrencyFormatter.formatCurrency(+detail.products.price),
                 alignment: 'right',
               },
-            ],
-            [
-              '2',
-              'Product 2',
-              '2',
-              '200',
               {
-                text: CurrencyFormatter.formatCurrency(400),
+                text: CurrencyFormatter.formatCurrency(
+                  +detail.products.price * detail.quantity,
+                ),
                 alignment: 'right',
               },
-            ],
-            [
-              '3',
-              'Product 3',
-              '3',
-              '300',
-              {
-                text: CurrencyFormatter.formatCurrency(1650),
-                alignment: 'right',
-              },
-            ],
+            ]),
           ],
         },
       },
@@ -176,14 +181,14 @@ export const orderByIdReport = (value: ReportValues): TDocumentDefinitions => {
                 [
                   'Subtotal',
                   {
-                    text: CurrencyFormatter.formatCurrency(120),
+                    text: CurrencyFormatter.formatCurrency(subTotal),
                     alignment: 'right',
                   },
                 ],
                 [
                   { text: 'Total', bold: true },
                   {
-                    text: CurrencyFormatter.formatCurrency(150),
+                    text: CurrencyFormatter.formatCurrency(total),
                     alignment: 'right',
                     bold: true,
                   },
