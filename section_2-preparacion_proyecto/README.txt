@@ -99,3 +99,5 @@ RECIBO DE COMPRA - MAESTRO DETALLE RELACIONADO
         $ nest g resource storeReports --no-spec
             > What transport layer do you use? REST API
             > Would you like to generate CRUD entry points? (Y/n) n
+
+SVGs Y GRÁFICAS - CHART.JS
