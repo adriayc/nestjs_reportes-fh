@@ -66,6 +66,9 @@ PREPARACIÓN DE PROYECTO Y BASE DE DATOS
     - Axios
         $ npm i axios
 
+    - Chat.js and Utils
+        $ npm i @kurkle/color
+
 * Nest CLI
     -  Crear un nuevo recurso (sin archivo de pruebas)
         $ nest g resource {{RESOURCE-NAME}} --no-spec

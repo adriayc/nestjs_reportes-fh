@@ -32,10 +32,45 @@ const generateChartImage = async () => {
   //   return await Utils.chartJsToImage(chartConfig, { width: 50, height: 50 });
 };
 
+const generateDonut = async () => {
+  const DATA_COUNT = 5;
+  const NUMBER_CFG = { count: DATA_COUNT, min: 0, max: 100 };
+
+  const data = {
+    labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
+    datasets: [
+      {
+        label: 'Dataset 1',
+        data: Utils.numbers(NUMBER_CFG),
+        backgroundColor: Object.values(Utils.CHART_COLORS),
+      },
+    ],
+  };
+
+  const config = {
+    type: 'doughnut',
+    data: data,
+    options: {
+      responsive: true,
+      title: {
+        display: true,
+        text: 'Chart.js Doughnut Chart',
+      },
+    },
+  };
+
+  return await Utils.chartJsToImage(config);
+};
+
 export const getBasicChartSvgReport =
   async (): Promise<TDocumentDefinitions> => {
-    // Error
-    const chart = await generateChartImage();
+    // const chart = await generateChartImage();
+    // const chartDonut = await generateDonut();
+
+    const [chart, chartDonut] = await Promise.all([
+      generateChartImage(),
+      generateDonut(),
+    ]);
 
     return {
       content: [
@@ -50,6 +85,10 @@ export const getBasicChartSvgReport =
           image: chart,
           width: 500,
           //   height: 100,
+        },
+        {
+          image: chartDonut,
+          width: 500,
         },
       ],
     };
