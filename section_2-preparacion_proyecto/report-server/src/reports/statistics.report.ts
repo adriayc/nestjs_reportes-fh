@@ -3,6 +3,8 @@ import { getDonutChart } from './charts/donut.chart';
 import { headerSection } from './sections/header.section';
 import { getLineChart } from './charts/line.chart';
 import { getBarsChart } from './charts/bars.chart';
+import { getSteppedLineChart } from './charts/stepped-line.chart';
+import { footerSection } from './sections/footer.section';
 
 interface TopCountry {
   country: string;
@@ -18,24 +20,26 @@ interface ReportOptions {
 export const getStatisticsReport = async (
   options: ReportOptions,
 ): Promise<TDocumentDefinitions> => {
-  const [donutChart, lineChart, barsChart1, barsChart2] = await Promise.all([
-    getDonutChart({
-      entries: options.topCountries.map((c) => ({
-        label: c.country,
-        value: c.customers,
-      })),
-      position: 'left',
-    }),
-    getLineChart(),
-    getBarsChart(),
-    getBarsChart(),
-  ]);
+  const [donutChart, lineChart, barsChart, steppedLineChart] =
+    await Promise.all([
+      getDonutChart({
+        entries: options.topCountries.map((c) => ({
+          label: c.country,
+          value: c.customers,
+        })),
+        position: 'left',
+      }),
+      getLineChart(),
+      getBarsChart(),
+      getSteppedLineChart(),
+    ]);
 
   const docDefinition: TDocumentDefinitions = {
     header: headerSection({
       title: options.title ?? 'Estadísticas de clientes',
       subTitle: options.subTitle ?? 'Top 10 países con más clientes',
     }),
+    footer: footerSection,
     pageMargins: [40, 100, 40, 60],
     content: [
       {
@@ -76,11 +80,11 @@ export const getStatisticsReport = async (
         columnGap: 10,
         columns: [
           {
-            image: barsChart1,
+            image: barsChart,
             width: 250,
           },
           {
-            image: barsChart2,
+            image: steppedLineChart,
             width: 250,
           },
         ],
