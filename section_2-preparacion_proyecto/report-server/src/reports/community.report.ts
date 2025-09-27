@@ -54,6 +54,95 @@ export const getCommunityReport = (): TDocumentDefinitions => {
           },
         ],
       },
+
+      // Detalles del cliente
+      {
+        table: {
+          widths: ['auto', '*', 'auto', '*'],
+          body: [
+            [
+              {
+                text: 'Datos del cliente',
+                color: 'white',
+                fillColor: '#5775e1',
+                colSpan: 4,
+                // border: [false, false, false, false],
+              },
+              {},
+              {},
+              {},
+            ],
+
+            // Razon social
+            [
+              {
+                text: 'Razon social',
+                color: 'white',
+                fillColor: '#343a40',
+                bold: true,
+              },
+              {
+                text: 'Nombre de la empresa',
+                fillColor: 'white',
+              },
+              {
+                text: 'Dirección',
+                color: 'white',
+                fillColor: '#343a40',
+                bold: true,
+              },
+              {
+                text: 'Razon social',
+                fillColor: 'white',
+              },
+            ],
+            [
+              {
+                text: 'RUT',
+                color: 'white',
+                fillColor: '#343a40',
+                bold: true,
+              },
+              {
+                text: '',
+                fillColor: 'white',
+              },
+              {
+                text: 'Teléfono',
+                color: 'white',
+                fillColor: '#343a40',
+                bold: true,
+              },
+              {
+                text: '',
+                fillColor: 'white',
+              },
+            ],
+            [
+              {
+                text: 'Giro',
+                color: 'white',
+                fillColor: '#343a40',
+                bold: true,
+              },
+              {
+                text: '',
+                fillColor: 'white',
+              },
+              {
+                text: 'Condición de pago',
+                color: 'white',
+                fillColor: '#343a40',
+                bold: true,
+              },
+              {
+                text: '',
+                fillColor: 'white',
+              },
+            ],
+          ],
+        },
+      },
     ],
   };
 
