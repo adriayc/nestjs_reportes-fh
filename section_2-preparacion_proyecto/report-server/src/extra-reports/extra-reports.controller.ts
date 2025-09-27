@@ -11,7 +11,17 @@ export class ExtraReportsController {
     const pdfDoc = this.extraReportsService.getHtmlReport();
 
     response.setHeader('Content-Type', 'application/pdf');
-    pdfDoc.info.Title = 'HTML-Reports';
+    pdfDoc.info.Title = 'HTML-Report';
+    pdfDoc.pipe(response);
+    pdfDoc.end();
+  }
+
+  @Get('community-report')
+  getCommunityReport(@Res() response: Response) {
+    const pdfDoc = this.extraReportsService.getCommunityReport();
+
+    response.setHeader('Content-Type', 'application/pdf');
+    pdfDoc.info.Title = 'Billing-Reports';
     pdfDoc.pipe(response);
     pdfDoc.end();
   }
