@@ -79,9 +79,23 @@ CONSTANCIA DE EMPLEADOS
 
 TABLAS - PAGINACIÓN Y FILTROS
 
-* Levantar la app y la database (Optinal: realizar las respectivas configuraciones)
+* Levantar la app, la database (Optinal: realizar las respectivas configuraciones).
 
 * Importar la base de datos y reconstruir el modelo de prisma
     $ npx prisma db pull    // Verifica como esta la db y crea los esquemas
         Ok to proceed? (y) y
     $ npx prisma generate   // Generar el nuevo cliente
+
+RECIBO DE COMPRA - MAESTRO DETALLE RELACIONADO
+
+* Levantar la app y la database (Optinal: realizar las respectivas configuraciones).
+* Importar la base de datos y reconstruir el modelo de prisma
+    $ npx prisma db pull    // Verifica como esta la db y crea los esquemas
+        Ok to proceed? (y) y
+    $ npx prisma generate   // Generar el nuevo cliente
+
+* Nest CLI
+    -  Crear un nuevo recurso (sin archivo de pruebas)
+        $ nest g resource storeReports --no-spec
+            > What transport layer do you use? REST API
+            > Would you like to generate CRUD entry points? (Y/n) n
