@@ -54,3 +54,41 @@ $ docker pull dbage/pgadmin4:8.6
 - [Paste JSON as Code](https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype)
 - [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
 - [Backticks](https://marketplace.visualstudio.com/items?itemName=fractalbrew.backticks)
+
+## NestJS
+
+NestJS es un **framework para construir aplicaciones del lado del servidor** con **Node.js**.
+
+Está desarrollado en TypeScript (aunque también se peude usar con JavaScript) y está inspirado en la aquitectura de **Angular**, organizando el código en **módulos, controladores y servicios**.
+Se utiliza mucho para crear **APIs REST, APIs GraphQl y microservicios**.
+
+## Docker
+
+**Docker** es una **plataforma de software** que permite crear, ejecutar y administrar aplicaciones dentro de **contenedores**.
+
+Un **contenedor** es como una "cajita" que incluye:
+
+- El **código de la aplicación**
+- Las **dependencias** (librerías, frameworks, etc.)
+- Las **configuraciones necesarias**
+
+De esa forma, la aplicación siempre se ejecuta igual, sin importar en qué computadora o servidor esté instalada.
+
+## PostgreSQL y PGAdmin
+
+**PostgreSQL**
+
+- Es un **un sitema de gestión de bases de datos relaciones (RDBMS)** de **código abierto**.
+- Usa **SQL** (Structured Query Language) para manejar datos.
+- Es conocido por ser muy **potente, seguro y escalable**.
+- Se utiliza es aplicaciones pequeas, medianas y hasta en sistemas empresariales grandes.
+
+**pgAdmin**
+
+- Es una **herramienta gráfica** (GUI) para administrar PostgreSQL.
+- Permite manejar bases de datos de forma visual sin tener que escribir todos los camandos en consola.
+- Sirve para:
+  - Crear y eliminar bases de datos.
+  - Diseñar tablas y relaciones.
+  - Ejecutar consultas SQL.
+  - Monitorear el rendimiento del servidor.
