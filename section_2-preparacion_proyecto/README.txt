@@ -69,6 +69,14 @@ PREPARACIÓN DE PROYECTO Y BASE DE DATOS
     - Chat.js and Utils
         $ npm i @kurkle/color
 
+    - HTML to pdfmake
+        $ npm i html-to-pdfmake
+        $ npm i --save-dev @types/html-to-pdfmake (Types)
+
+    - JsDom (To server)
+        $ npm i jsdom
+
+
 * Nest CLI
     -  Crear un nuevo recurso (sin archivo de pruebas)
         $ nest g resource {{RESOURCE-NAME}} --no-spec
@@ -113,3 +121,16 @@ SVGs Y GRÁFICAS - CHART.JS
     $ npx prisma db pull    // Verifica como esta la db y crea los esquemas
         Ok to proceed? (y) y
     $ npx prisma generate   // Generar el nuevo cliente
+
+
+HTML Reports - Diseño de tablas y celdas
+
+* Levantar la app y la database (Optinal: realizar las respectivas configuraciones).
+* Generar el cliente de prisma (Optional)
+    $ npx prisma generate
+
+* Nest CLI
+    -  Crear un nuevo recurso (sin archivo de pruebas)
+        $ nest g resource extra-reports --no-spec
+            > What transport layer do you use? REST API
+            > Would you like to generate CRUD entry points? (Y/n) n
