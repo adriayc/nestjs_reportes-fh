@@ -16,7 +16,8 @@ const currentDate = {
   alignment: 'right',
   margin: [20, 40],
   // width: 150,
-  width: 180,
+  width: 100,
+  fontSize: 10,
   // };
 } as Content;
 
@@ -39,7 +40,7 @@ export const headerSection = (options: HeaderOptions): Content => {
         alignment: 'center',
         margin: [0, 2, 0, 0],
         style: {
-          bold: true,
+          // bold: true,
           fontSize: 16,
         },
       }

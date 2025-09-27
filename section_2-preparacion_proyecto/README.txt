@@ -62,6 +62,12 @@ PREPARACIÓN DE PROYECTO Y BASE DE DATOS
     - pdfmake
         $ npm install pdfmake
         $ npm i --save-dev @types/pdfmake // Tipado estricto
+    
+    - Axios
+        $ npm i axios
+
+    - Chat.js and Utils
+        $ npm i @kurkle/color
 
 * Nest CLI
     -  Crear un nuevo recurso (sin archivo de pruebas)
@@ -99,3 +105,11 @@ RECIBO DE COMPRA - MAESTRO DETALLE RELACIONADO
         $ nest g resource storeReports --no-spec
             > What transport layer do you use? REST API
             > Would you like to generate CRUD entry points? (Y/n) n
+
+SVGs Y GRÁFICAS - CHART.JS
+
+* Levantar la app y la database (Optinal: realizar las respectivas configuraciones).
+* Importar la base de datos y reconstruir el modelo de prisma
+    $ npx prisma db pull    // Verifica como esta la db y crea los esquemas
+        Ok to proceed? (y) y
+    $ npx prisma generate   // Generar el nuevo cliente
