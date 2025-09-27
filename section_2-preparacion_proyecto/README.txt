@@ -69,6 +69,14 @@ PREPARACIÓN DE PROYECTO Y BASE DE DATOS
     - Chat.js and Utils
         $ npm i @kurkle/color
 
+    - HTML to pdfmake
+        $ npm i html-to-pdfmake
+        $ npm i --save-dev @types/html-to-pdfmake (Types)
+
+    - JsDom (To server)
+        $ npm i jsdom
+
+
 * Nest CLI
     -  Crear un nuevo recurso (sin archivo de pruebas)
         $ nest g resource {{RESOURCE-NAME}} --no-spec
