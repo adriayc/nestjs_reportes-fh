@@ -116,3 +116,13 @@ SVGs Y GRÁFICAS - CHART.JS
 
 
 HTML Reports - Diseño de tablas y celdas
+
+* Levantar la app y la database (Optinal: realizar las respectivas configuraciones).
+* Generar el cliente de prisma (Optional)
+    $ npx prisma generate
+
+* Nest CLI
+    -  Crear un nuevo recurso (sin archivo de pruebas)
+        $ nest g resource extra-reports --no-spec
+            > What transport layer do you use? REST API
+            > Would you like to generate CRUD entry points? (Y/n) n
