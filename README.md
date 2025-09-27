@@ -92,3 +92,19 @@ De esa forma, la aplicación siempre se ejecuta igual, sin importar en qué comp
   - Diseñar tablas y relaciones.
   - Ejecutar consultas SQL.
   - Monitorear el rendimiento del servidor.
+
+## PdfMake
+
+**PdfMake** es una una **librería de JavaScript** que permite **crear documentos PDF desde el navegador o Node.js**. Se usa mucho en aplicaciones web para generar facturas, reportes, boletas, certificados, etc.
+
+### ¿Cómo funciona?
+
+PdfMake trabaja con un objeto llamado **document definition** (definición de documento).
+Ese objeto describe todo el contenido y estilo del PDF:
+
+- Texto
+- Imágenes
+- Tablas
+- Estilos (negrita, color, tamaños alineaciones, etc.)
+
+Luego, PdfMake transforma esa definición en un archivo PDF descargable o imprimible.

@@ -59,9 +59,20 @@ PREPARACIÓN DE PROYECTO Y BASE DE DATOS
     - Genera el cliente de Prisma
         $ npx prisma generate
 
+    - pdfmake
+        $ npm install pdfmake
+        $ npm i --save-dev @types/pdfmake // Tipado estricto
+
 * Nest CLI
     -  Crear un nuevo recurso (sin archivo de pruebas)
         $ nest g resource {{RESOURCE-NAME}} --no-spec
         $ nest g resource basic-reports --no-spec
             > What transport layer do you use? REST API
             > Would you like to generate CRUD entry points? (Y/n) n
+
+    - Crear un nuevo modulo
+        $ nest g module printer
+    - Crear un nuevo service
+        $ nest g service printer --no-spec
+
+CONSTANCIA DE EMPLEADOS
