@@ -113,3 +113,6 @@ SVGs Y GRÁFICAS - CHART.JS
     $ npx prisma db pull    // Verifica como esta la db y crea los esquemas
         Ok to proceed? (y) y
     $ npx prisma generate   // Generar el nuevo cliente
+
+
+HTML Reports - Diseño de tablas y celdas
